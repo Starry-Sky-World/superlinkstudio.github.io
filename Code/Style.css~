@@ -51,7 +51,7 @@
 
 #LeftBar{
     z-index: 1;
-    transition: 0.15s;
+    transition: 0.1s;
     display: block;
     position: fixed;
     top: 50px;
@@ -83,7 +83,7 @@
 }
 
 #Mesh{
-    transition: 0.15s;
+    transition: 0.05s;
     display: block;
     position: fixed;
     top: 50px;
@@ -95,4 +95,5 @@
 
 body{
     margin-top: 60px;
+    background: rgb(50, 50, 50);
 }
