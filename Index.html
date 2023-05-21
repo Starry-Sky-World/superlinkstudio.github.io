@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+    <title translate="no">SuperLinkStudio</title>
+    <style>
+        *{
+            user-select: none;
+        }
+
+        #TopBar{
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background-color: black;
+            color: white;
+            margin: 0;
+        }
+
+        #TopBar *{
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        #OpenListButton{
+            width: 50px;
+            height: 50px;
+            border: 0;
+            border-radius: 0;
+            background: rgba(255, 255, 255, 0);
+            background-size: 100% 100%;
+            padding: 5px;
+        }
+
+        #OpenListButton:hover{
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        #OpenListButton *{
+            transition: 0.1s;
+        }
+
+        #OpenListButton:active *{
+            transform: scale(80%, 80%);
+        }
+    </style>
+</head>
+<body>
+    <div id="TopBar">
+        <button id="OpenListButton"><img src="./OpenListButton.png" height="calc(100% - 5px)" width="100%"></button>
+        <p translate="no">SuperLinkStudio</p>
+    </div>
+</body>
