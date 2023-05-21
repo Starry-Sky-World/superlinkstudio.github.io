@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <head>
     <title translate="no">SuperLinkStudio</title>
+    <link rel="shortcut icon" href="./IndexPicture/ICON.png" type="image/x-icon">
     <style>
         *{
             user-select: none;
+            outline: none;
+        }
+
+        ::-webkit-scrollbar {
+	        display: none;
         }
 
         #TopBar{
+            z-index: 2;
             display: block;
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             height: 50px;
-            background-color: black;
-            color: white;
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
             margin: 0;
         }
 
@@ -44,11 +51,81 @@
         #OpenListButton:active *{
             transform: scale(80%, 80%);
         }
+
+
+        #LeftBar{
+            z-index: 1;
+            transition: 0.1s;
+            display: block;
+            position: fixed;
+            top: 50px;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            background-color: rgb(25, 25, 25);
+            margin: 0;
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+
+        #LeftBar Button{
+            width: 250px;
+            border: 0;
+            background: rgba(255, 255, 255, 0);
+            color: rgb(255, 255, 255);
+            text-align: left;
+            padding: 10px;
+            margin: 0;
+        }
+
+        #LeftBar Button *{
+            margin: 0;
+        }
+
+        #LeftBar Button:hover{
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        #Mesh{
+            transition: 0.05s;
+            display: block;
+            position: fixed;
+            top: 50px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0);
+        }
     </style>
 </head>
 <body>
     <div id="TopBar">
-        <button id="OpenListButton"><img src="./OpenListButton.png" height="calc(100% - 5px)" width="100%"></button>
+        <button id="OpenListButton" onclick="ChangeTopBarMode()"><img src="./IndexPicture/OpenListButton.png" height="calc(100% - 5px)" width="100%"></button>
         <p translate="no">SuperLinkStudio</p>
     </div>
+
+    <div id="LeftBar">
+        <button><p>主页</p></button>
+    </div>
+    <div id="Mesh"></div>
+
+    <iframe src="" frameborder="0"></iframe>
+    <script>
+        var TopBarMode = true;
+        function ChangeTopBarMode()
+        {
+            if (TopBarMode)
+            {
+                document.getElementById("LeftBar").style.width = "250px";
+                document.getElementById("Mesh").style.backgroundColor = "rgba(0, 0, 0, 0.25)";
+            }
+            else
+            {
+                document.getElementById("LeftBar").style.width = "0";
+                document.getElementById("Mesh").style.backgroundColor = "rgba(0, 0, 0, 0)";
+            }
+
+            TopBarMode = !TopBarMode;
+        }
+    </script>
 </body>
